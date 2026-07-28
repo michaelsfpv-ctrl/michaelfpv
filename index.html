@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael FPV — Charlotte Drone Cinematography</title>
+<meta name="description" content="Charlotte FPV drone cinematography for weddings, real estate, and events. FAA Part 107 certified. Available nationwide.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c9913a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%2316110a' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+em{font-style:normal}
+
+:root{
+  --black:  #0a0d12;
+  --b1:     #0e1218;
+  --b2:     #131820;
+  --b3:     #19202a;
+  --b4:     #212a36;
+  --b5:     #2c3849;
+  --white:  #f5f3ee;
+  --off:    #ddd9cf;
+  --grey:   #5e6772;
+  --grey2:  #8a92a0;
+  --grey3:  #b8bfc9;
+  --gold:   #c9913a;
+  --gold2:  #e0ab57;
+  --line:   rgba(245,243,238,0.08);
+  --line2:  rgba(245,243,238,0.16);
+  --ease:   cubic-bezier(0.16,1,0.3,1);
+  --D:'Archivo Expanded',Arial,sans-serif;
+  --S:'Inter',system-ui,sans-serif;
+  --M:'JetBrains Mono',monospace;
+}
+
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--black);color:var(--white);font-family:var(--S);font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:rgba(201,145,58,0.35);color:#fff}
+a{color:inherit;text-decoration:none}
+button{font:inherit;border:none;background:none;cursor:pointer}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1280px;margin:0 auto;padding:0 2.5rem}
+@media(max-width:768px){.wrap{padding:0 1.4rem}}
+
+
+#page-loader{position:fixed;inset:0;z-index:9999;background:var(--black);display:flex;align-items:center;justify-content:center;transition:opacity 0.5s ease,visibility 0.5s ease}
+#page-loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+#page-loader-mark{font-family:var(--M);font-size:0.75rem;letter-spacing:0.3em;color:var(--gold);display:flex;align-items:center;gap:0.6rem}
+#page-loader-mark::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold);animation:loaderPulse 1s ease-in-out infinite}
+@keyframes loaderPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.7)}}
+
+#nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.2rem 2.5rem;transition:padding 0.4s var(--ease)}
+#nav .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1280px;margin:0 auto;background:rgba(13,17,23,0.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--line);border-radius:50px;padding:0.55rem 0.55rem 0.55rem 1.6rem;transition:all 0.4s var(--ease)}
+#nav.bg{padding:0.7rem 2.5rem}
+#nav.bg .nav-inner{background:rgba(10,13,18,0.92);border-color:var(--line2)}
+.logo{display:flex;align-items:center;gap:0.65rem;cursor:pointer}
+.logo-mark{width:32px;height:32px;border-radius:8px;background:var(--gold);color:#16110a;font-family:var(--D);font-size:1rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-name{font-family:var(--D);font-size:1.05rem;font-weight:700;letter-spacing:0.01em;color:var(--white)}
+.logo-name span{color:var(--gold)}
+.nav-links{display:flex;gap:0.1rem}
+@media(max-width:900px){.nav-links{display:flex}}
+.nav-a{font-family:var(--M);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--grey2);padding:0.5rem 0.95rem;cursor:pointer;transition:color 0.25s;position:relative}
+.nav-a:hover,.nav-a.on{color:var(--white)}
+.nav-right{display:flex;align-items:center;gap:0.7rem}
+.nav-cta{font-family:var(--M);font-size:0.68rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;background:var(--gold);color:#16110a;padding:0.6rem 1.3rem;border-radius:50px;transition:all 0.25s var(--ease)}
+.nav-cta:hover{background:var(--gold2);transform:translateY(-1px)}
+.hmbg{display:none;padding:0.3rem}
+@media(max-width:900px){.hmbg{display:none}}
+.hmbg span{display:block;width:20px;height:1.5px;background:var(--white);margin:5px 0}
+
+@media(max-width:900px){
+  .logo-name{display:none}
+  #nav{padding:0.8rem 1rem}
+  #nav.bg{padding:0.6rem 1rem}
+  #nav .nav-inner{padding:0.5rem 0.5rem 0.5rem 1rem;gap:0.35rem}
+  .logo svg{width:32px;height:22px}
+  .nav-links{gap:0}
+  .nav-a{font-size:0.62rem;padding:0.45rem 0.5rem;letter-spacing:0.04em}
+  .nav-cta{font-size:0.6rem;padding:0.55rem 0.85rem;letter-spacing:0.03em}
+}
+@media(max-width:480px){
+  #nav .nav-inner{padding:0.45rem 0.45rem 0.45rem 0.8rem}
+  .logo svg{width:28px;height:19px}
+  .nav-a{font-size:0.55rem;padding:0.4rem 0.3rem;letter-spacing:0.02em}
+  .nav-cta{font-size:0.55rem;padding:0.5rem 0.7rem}
+}
+
+#mobile-menu{position:fixed;inset:0;z-index:550;background:rgba(10,13,18,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;visibility:hidden;transition:opacity 0.4s ease,visibility 0.4s ease}
+#mobile-menu.on{opacity:1;visibility:visible}
+#mobile-menu .nav-a{font-family:var(--D);font-size:1.8rem;font-weight:700;color:var(--white)}
+#mobile-close{position:absolute;top:1.8rem;right:1.8rem;font-family:var(--M);font-size:1.5rem;color:var(--white)}
+
+#side-book{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:400;background:var(--gold);cursor:pointer;padding:1.4rem 0.6rem;border-radius:6px 0 0 6px;transition:all 0.3s var(--ease);box-shadow:-4px 0 24px rgba(0,0,0,0.4)}
+#side-book:hover{padding-right:0.9rem;background:var(--gold2)}
+#side-book span{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--M);font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#16110a;white-space:nowrap}
+
+.pg{display:none;opacity:0;transform:translateY(14px);transition:opacity 0.55s var(--ease),transform 0.55s var(--ease);min-height:100vh;overflow:visible}
+.pg.on{display:block}
+.pg.show{opacity:1;transform:translateY(0)}
+.pg.leaving{opacity:0;transform:translateY(-10px);transition:opacity 0.3s ease,transform 0.3s ease}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-l{opacity:0;transform:translateX(-32px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+.rv-l.in{opacity:1;transform:translateX(0)}
+.rv-r{opacity:0;transform:translateX(32px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+.rv-r.in{opacity:1;transform:translateX(0)}
+.rv-s{opacity:0;transform:scale(0.94);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+.rv-s.in{opacity:1;transform:scale(1)}
+.rv-stagger>*{opacity:0;transform:translateY(20px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+.rv-stagger.in>*{opacity:1;transform:translateY(0)}
+.rv-stagger.in>*:nth-child(1){transition-delay:.05s}.rv-stagger.in>*:nth-child(2){transition-delay:.12s}
+.rv-stagger.in>*:nth-child(3){transition-delay:.19s}.rv-stagger.in>*:nth-child(4){transition-delay:.26s}
+.rv-stagger.in>*:nth-child(5){transition-delay:.33s}.rv-stagger.in>*:nth-child(6){transition-delay:.40s}
+.pf-cat:hover .pf-cat-over{background:rgba(10,13,18,0.28)!important}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+.cat-tab{font-family:var(--M);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--grey2);background:var(--b1);border:1px solid var(--line2);padding:0.6rem 1.2rem;border-radius:50px;cursor:pointer;transition:all 0.2s}
+.cat-tab:hover{color:var(--white);border-color:var(--grey2)}
+.cat-tab.on{background:var(--gold);color:#16110a;border-color:var(--gold)}
+
+.eyebrow{font-family:var(--M);font-size:0.7rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem}
+.eyebrow::before{content:'(';color:var(--grey)}
+.eyebrow::after{content:')';color:var(--grey)}
+.h-xl{font-family:var(--D);font-size:clamp(2.6rem,6vw,5.5rem);font-weight:700;line-height:0.98;letter-spacing:-0.01em;color:var(--white)}
+.h-xl em{color:var(--gold)}
+.h-lg{font-family:var(--D);font-size:clamp(2.2rem,4.5vw,4rem);font-weight:700;line-height:1;letter-spacing:-0.01em;color:var(--white)}
+.h-lg em{color:var(--gold)}
+.h-md{font-family:var(--D);font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:700;letter-spacing:-0.005em;color:var(--white)}
+.body-txt{font-family:var(--S);font-size:0.95rem;font-weight:300;color:var(--grey3);line-height:1.85}
+.body-sm{font-family:var(--S);font-size:0.85rem;font-weight:300;color:var(--grey2);line-height:1.75}
+
+.btn{font-family:var(--M);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.95rem 2.1rem;border-radius:50px;cursor:pointer;transition:all 0.3s var(--ease);display:inline-flex;align-items:center;gap:0.5rem}
+.btn-gold{background:var(--gold);color:#16110a}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,145,58,0.3)}
+.btn-line{background:transparent;color:var(--white);border:1px solid var(--line2)}
+.btn-line:hover{border-color:var(--white);transform:translateY(-2px)}
+
+#hero{position:sticky;top:0;height:100vh;min-height:680px;display:flex;flex-direction:column;justify-content:flex-end;z-index:1}
+.hero-vid-wrap{position:absolute;inset:0;z-index:0;background:#000;overflow:hidden}
+.hero-vid-wrap video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:100%;min-height:100%;width:auto;height:auto;object-fit:cover;opacity:0.55}
+.hero-over{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(10,13,18,0.97) 0%,rgba(10,13,18,0.5) 45%,rgba(10,13,18,0.15) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 2.5rem 4.5rem;max-width:1280px;margin:0 auto;width:100%}
+.hero-sub{font-family:var(--S);font-size:clamp(0.9rem,1.1vw,1.05rem);font-weight:300;color:var(--grey3);max-width:540px;line-height:1.85;margin:1.4rem 0 2.2rem}
+.hero-btns{display:flex;gap:0.9rem;flex-wrap:wrap;margin-bottom:2.8rem}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:1.6rem}
+.hstat-n{font-family:var(--D);font-size:1.7rem;font-weight:700;color:var(--white);line-height:1}
+.hstat-l{font-family:var(--M);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey2);margin-top:0.3rem}
+@media(max-width:768px){.hero-content{padding:0 1.4rem 3rem}.hero-stats{gap:1.6rem}}
+
+.strip{background:var(--b2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:0.85rem 0}
+.strip-inner{display:inline-flex;animation:marquee 32s linear infinite}
+.strip-item{font-family:var(--M);font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey2);display:flex;align-items:center;gap:1.6rem;white-space:nowrap;padding:0 1.6rem}
+.strip-item b{color:var(--gold);font-weight:600}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.sec{padding:7rem 0}
+@media(max-width:768px){.sec{padding:4.5rem 0}}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3.5rem;flex-wrap:wrap}
+
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+@media(max-width:900px){.stat-strip{grid-template-columns:repeat(4,1fr)}} @media(max-width:600px){.stat-strip{grid-template-columns:repeat(2,1fr)}}
+.stat-cell{padding:2.2rem 1.6rem;border-right:1px solid var(--line);background:var(--b1);transition:background 0.3s}
+.stat-cell:last-child{border-right:none}
+.stat-cell:hover{background:var(--b2)}
+.stat-n{font-family:var(--D);font-size:1.9rem;font-weight:700;color:var(--white);letter-spacing:-0.02em;line-height:1}
+.stat-l{font-family:var(--M);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey2);margin-top:0.5rem}
+
+.num-row{display:grid;grid-template-columns:60px 1fr auto;gap:1.8rem;align-items:center;padding:1.8rem 0;border-bottom:1px solid var(--line);cursor:pointer;transition:all 0.3s var(--ease)}
+.num-row:hover{padding-left:0.6rem;background:rgba(245,243,238,0.015)}
+.num-row:last-child{border-bottom:none}
+.num-tag{font-family:var(--M);font-size:0.85rem;color:var(--gold);font-weight:600}
+.num-body h3{font-family:var(--D);font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:0.4rem}
+.num-row:hover .num-body h3{color:var(--gold)}
+.num-body p{font-family:var(--S);font-size:0.85rem;font-weight:300;color:var(--grey2);line-height:1.7;max-width:560px}
+.num-price{font-family:var(--M);text-align:right;flex-shrink:0}
+.num-price .lbl{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);display:block;margin-bottom:0.25rem}
+.num-price .amt{font-size:1.1rem;color:var(--white);font-weight:600}
+@media(max-width:700px){.num-row{grid-template-columns:40px 1fr;}.num-price{display:none}}
+
+.vid-card{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:var(--b2)}
+.vid-card video{width:100%;height:100%;object-fit:cover;transition:transform 0.6s var(--ease)}
+.vid-card:hover video{transform:scale(1.05)}
+.vid-over{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,13,18,0.85) 0%,rgba(10,13,18,0.05) 55%,transparent 100%)}
+.vid-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s}
+.vid-card:hover .vid-play{opacity:1}
+.vid-play-btn{width:62px;height:62px;border-radius:50%;background:rgba(245,243,238,0.95);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,0.5)}
+.vid-info{position:absolute;bottom:0;left:0;right:0;padding:1.4rem 1.5rem;z-index:2}
+.vid-info .tag{font-family:var(--M);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.3rem}
+.vid-info .ttl{font-family:var(--D);font-size:1.2rem;font-weight:700;color:#fff}
+
+.testi-card{background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem;display:flex;flex-direction:column;gap:1.2rem;transition:all 0.3s var(--ease)}
+.testi-card:hover{border-color:var(--line2);transform:translateY(-4px)}
+.testi-stars{color:var(--gold);font-size:0.85rem;letter-spacing:0.15em}
+.testi-quote{font-family:var(--S);font-size:0.9rem;font-weight:300;color:var(--grey3);line-height:1.75;flex:1}
+.testi-name{font-family:var(--M);font-size:0.7rem;color:var(--white);font-weight:600}
+.testi-role{font-family:var(--M);font-size:0.65rem;color:var(--grey2);margin-top:0.15rem}
+
+.svc-row{border-bottom:1px solid var(--line);cursor:pointer;transition:background 0.25s}
+.svc-row:hover{background:rgba(245,243,238,0.02)}
+.svc-row:last-child{border-bottom:none}
+.svc-top{display:grid;grid-template-columns:60px 1fr auto 32px;gap:1.8rem;align-items:center;padding:1.8rem 0}
+.svc-top .num-body h3{font-family:var(--D);font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:0.25rem;transition:color 0.25s}
+.svc-row:hover .svc-top .num-body h3,.svc-row.open .svc-top .num-body h3{color:var(--gold)}
+.svc-preview{font-family:var(--S);font-size:0.82rem;font-weight:300;color:var(--grey2);margin:0}
+.svc-caret{font-family:var(--M);font-size:1.2rem;color:var(--gold);transition:transform 0.35s var(--ease);text-align:center;flex-shrink:0}
+.svc-row.open .svc-caret{transform:rotate(45deg)}
+.svc-body{max-height:0;overflow:hidden;transition:max-height 0.5s var(--ease)}
+.svc-body-inner{padding:0 0 2rem 78px;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.svc-body p{font-family:var(--S);font-size:0.88rem;font-weight:300;color:var(--grey3);line-height:1.8}
+.svc-body ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.svc-body ul li{font-family:var(--M);font-size:0.72rem;color:var(--grey2);letter-spacing:0.04em;padding-left:1rem;position:relative}
+.svc-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold)}
+@media(max-width:700px){.svc-top{grid-template-columns:40px 1fr 28px}.num-price{display:none}.svc-body-inner{grid-template-columns:1fr;padding-left:0}}
+
+
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-q h4{font-family:var(--D);font-size:1.05rem;font-weight:700;color:var(--white)}
+.faq-caret{font-family:var(--M);color:var(--gold);font-size:1.1rem;flex-shrink:0;transition:transform 0.3s var(--ease)}
+.faq-row.open .faq-caret{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s var(--ease)}
+.faq-a p{font-family:var(--S);font-size:0.85rem;font-weight:300;color:var(--grey2);line-height:1.75;padding-top:0.9rem}
+
+.form-wrap{background:var(--b1);border:1px solid var(--line);border-radius:18px;padding:2.5rem}
+.fg{margin-bottom:1.1rem}
+.flbl{font-family:var(--M);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey2);display:block;margin-bottom:0.5rem}
+.finp{background:rgba(245,243,238,0.04);border:1px solid var(--line2);border-radius:8px;color:var(--white);padding:0.8rem 1rem;font-family:var(--S);font-size:0.88rem;font-weight:300;outline:none;width:100%;transition:border-color 0.25s,background 0.25s}
+.finp:focus{border-color:var(--gold);background:rgba(201,145,58,0.05)}
+.finp::placeholder{color:var(--grey);opacity:0.7}
+textarea.finp{resize:vertical;min-height:100px}
+select.finp{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238a92a0' stroke-width='2'><polyline points='6,9 12,15 18,9'/></svg>");background-repeat:no-repeat;background-position:right 1rem center}
+
+footer{background:var(--b1);border-top:1px solid var(--line);padding:4.5rem 0 2rem}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--line);margin-bottom:2rem}
+@media(max-width:800px){.foot-top{grid-template-columns:1fr 1fr}}
+.foot-desc{font-family:var(--S);font-size:0.82rem;font-weight:300;color:var(--grey2);line-height:1.75;margin-top:1rem;max-width:280px}
+.foot-h{font-family:var(--M);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);margin-bottom:1rem}
+.foot-links{display:flex;flex-direction:column;gap:0.65rem}
+.foot-links a{font-family:var(--S);font-size:0.83rem;color:var(--grey3);transition:color 0.2s}
+.foot-links a:hover{color:var(--gold)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--M);font-size:0.68rem;color:var(--grey)}
+.foot-legal{display:flex;gap:1.4rem}
+.foot-legal a{font-family:var(--M);font-size:0.65rem;color:var(--grey2);transition:color 0.2s}
+.foot-legal a:hover{color:var(--white)}
+
+.page-banner{padding:9rem 0 4rem;border-bottom:1px solid var(--line)}
+.page-banner h1{font-family:var(--D);font-size:clamp(2.6rem,6vw,5.5rem);font-weight:700;line-height:0.98;letter-spacing:-0.01em;color:var(--white)}
+.page-banner h1 em{color:var(--gold)}
+.page-banner p{font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey2);max-width:560px;line-height:1.8;margin-top:1.2rem}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+@media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+
+</style>
+</head>
+<body>
+
+<div id="page-loader"><div id="page-loader-mark">LOADING FEED</div></div>
+
+<div id="side-book" onclick="go('book')"><span>Book a Shoot</span></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="logo" onclick="go('home')" role="link" tabindex="0" aria-label="Go to home page">
+      <span class="logo-name">MICHAEL<span>FPV</span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <span class="nav-a on" data-pg="home" onclick="go('home')">Home</span>
+      <span class="nav-a" data-pg="portfolio" onclick="go('portfolio')">Portfolio</span>
+      <span class="nav-a" data-pg="services" onclick="go('services')">Services</span>
+      <span class="nav-a" data-pg="bts" onclick="go('bts')">BTS</span>
+    </div>
+    <div class="nav-right">
+      <button class="nav-cta" onclick="go('book')">Book Now</button>
+      <button class="hmbg" onclick="document.getElementById('mobile-menu').classList.add('on')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <div id="mobile-close" onclick="document.getElementById('mobile-menu').classList.remove('on')">&#10005;</div>
+  <span class="nav-a" data-pg="home" onclick="go('home');document.getElementById('mobile-menu').classList.remove('on')">Home</span>
+  <span class="nav-a" data-pg="portfolio" onclick="go('portfolio');document.getElementById('mobile-menu').classList.remove('on')">Portfolio</span>
+  <span class="nav-a" data-pg="services" onclick="go('services');document.getElementById('mobile-menu').classList.remove('on')">Services</span>
+  <span class="nav-a" data-pg="bts" onclick="go('bts');document.getElementById('mobile-menu').classList.remove('on')">BTS</span>
+  <button class="btn btn-gold" onclick="go('book');document.getElementById('mobile-menu').classList.remove('on')">Book Now</button>
+</div>
+
+<div class="pg on" id="pg-home">
+
+  <div id="home-scroll-wrapper" style="position:relative">
+
+  <section id="hero">
+    <div class="hero-vid-wrap">
+      <iframe src="https://iframe.videodelivery.net/988cd6d1efa131464be779721f4cd16c?autoplay=true&muted=true&loop=true&controls=false&background=true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;border:none;pointer-events:none;opacity:0.55" allow="autoplay"></iframe>
+    </div>
+    <div class="hero-over"></div>
+    <div class="hero-content" id="hero-content">
+      <h1 class="h-xl">MichaelFPV<br><em>Capture Your Journey.</em></h1>
+      <p class="hero-sub">At Michael FPV, we provide a full range of professional drone and FPV videography services for businesses, real estate, events, and commercial productions. Using industry-leading equipment and the latest technology, we capture stunning visuals that bring every project to life.</p>
+      <div class="hero-btns">
+        <button class="btn btn-gold" onclick="go('book')">Book a Shoot</button>
+        <button class="btn btn-line" onclick="go('portfolio')">View Portfolio</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hstat-n"><span style="color:#e53935">Part 107</span></div><div class="hstat-l">FAA Licensed</div></div>
+        <div><div class="hstat-n">USA Wide</div><div class="hstat-l">All 50 States</div></div>
+        <div><div class="hstat-n">Charlotte</div><div class="hstat-l">Located In</div></div>
+        
+    </div>
+  </section>
+
+  <!-- spacer so hero has room to scroll through before content takes over -->
+  <div style="height:35vh"></div>
+
+  <!-- content sits on top as hero fades behind it -->
+  <div id="home-content" style="position:relative;z-index:2;background:var(--black)">
+
+  <div class="strip">
+    <div class="strip-inner">
+      <span class="strip-item">Charlotte FPV <b>&#9671;</b></span>
+      <span class="strip-item">24-Hour Delivery <b>&#9671;</b></span>
+      <span class="strip-item">FAA <span style="color:#e53935">Part 107</span> Certified <b>&#9671;</b></span>
+      <span class="strip-item">Real Estate &middot; Weddings &middot; Events <b>&#9671;</b></span>
+      <span class="strip-item">Charlotte FPV <b>&#9671;</b></span>
+      <span class="strip-item">24-Hour Delivery <b>&#9671;</b></span>
+      <span class="strip-item">FAA <span style="color:#e53935">Part 107</span> Certified <b>&#9671;</b></span>
+      <span class="strip-item">Real Estate &middot; Weddings &middot; Events <b>&#9671;</b></span>
+    </div>
+  </div>
+
+
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="grid-2 rv">
+        <div>
+          <div class="eyebrow">About Us</div>
+          <h2 class="h-lg">About <em>Michael FPV.</em></h2>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center">
+          <p class="body-txt">At Michael FPV, we specialize in professional FPV drone videography that transforms ordinary spaces into unforgettable experiences.</p>
+          <p class="body-txt" style="margin-top:1rem">Based in Charlotte, North Carolina, we proudly serve clients throughout North Carolina and are available for projects across the United States.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="stat-strip rv">
+        <div class="stat-cell"><div class="stat-n"><span style="color:#e53935">Part 107</span></div><div class="stat-l">FAA Licensed</div></div>
+        <div class="stat-cell"><div class="stat-n">US Wide</div><div class="stat-l">All 50 States</div></div>
+        <div class="stat-cell"><div class="stat-n">Pro Gear</div><div class="stat-l">Professional</div></div>
+        <div class="stat-cell"><div class="stat-n">Charlotte</div><div class="stat-l">NC Based</div></div>
+      </div>
+
+      <div class="grid-4 rv-stagger" style="margin-top:1.4rem">
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem">
+          <div class="eyebrow" style="margin-bottom:0.8rem"><span style="color:#e53935">Part 107</span></div>
+          <h3 class="h-md" style="font-size:1.1rem;margin-bottom:0.8rem">What is FAA <span style="color:#e53935">Part 107</span>?</h3>
+          <p class="body-sm"><span style="color:#e53935">Part 107</span> is the FAA's commercial drone pilot certification. It means Michael is legally licensed to fly drones for paid work — including in controlled airspace, near airports, and at events. Every shoot is fully legal, insured, and compliant.</p>
+        </div>
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem">
+          <div class="eyebrow" style="margin-bottom:0.8rem">US Wide</div>
+          <h3 class="h-md" style="font-size:1.1rem;margin-bottom:0.8rem">What states do we serve?</h3>
+          <p class="body-sm">Based in Charlotte, NC — we serve the entire Charlotte area area with no travel fee. We're available for projects nationwide across all 50 states. Travel costs for out-of-market shoots are quoted transparently upfront, no surprises.</p>
+        </div>
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem">
+          <div class="eyebrow" style="margin-bottom:0.8rem">Pro Gear</div>
+          <h3 class="h-md" style="font-size:1.1rem;margin-bottom:0.8rem">What gear do we use?</h3>
+          <p class="body-sm">We fly a standard DJI drone for smooth cinematic aerials and HDR photography, and a custom-built FPV cinewhoop for immersive indoor flythroughs. Both rigs shoot 4K — one for wide landscapes, one for up-close storytelling inside your space.</p>
+        </div>
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem">
+          <div class="eyebrow" style="margin-bottom:0.8rem">Location</div>
+          <h3 class="h-md" style="font-size:1.1rem;margin-bottom:0.8rem">Located in Charlotte, NC</h3>
+          <p class="body-sm">Locally based services available throughout the Charlotte area — from Uptown to Ballantyne, Lake Norman to Concord. We know the area and can be on-site fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">What We Offer</div>
+          <h2 class="h-lg">Services, <em>one team.</em></h2>
+        </div>
+        <button class="btn btn-line" onclick="go('services')">Our Services</button>
+      </div>
+      <div class="rv">
+        <div class="num-row" style="cursor:default">
+          <div class="num-tag">01</div>
+          <div class="num-body"><h3>Real Estate</h3><p>FPV flythroughs and HDR photography for listings. MLS-ready and social-ready exports included.</p></div>
+        </div>
+        <div class="num-row" style="cursor:default">
+          <div class="num-tag">02</div>
+          <div class="num-body"><h3>Weddings</h3><p>Whisper-quiet aerials of your ceremony and reception, captured without disrupting the day.</p></div>
+        </div>
+        <div class="num-row" style="cursor:default">
+          <div class="num-tag">03</div>
+          <div class="num-body"><h3>Events &amp; Venues</h3><p>Galas, openings, festivals &mdash; full coverage from the air and through the crowd.</p></div>
+        </div>
+        <div class="num-row" style="cursor:default">
+          <div class="num-tag">04</div>
+          <div class="num-body"><h3>Commercial &amp; Brand</h3><p>Production-grade FPV for ads, music videos, and branded content. Custom scope and quote.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="eyebrow rv">Questions</div>
+      <h2 class="h-lg rv" style="margin-bottom:2rem">What people <em>ask.</em></h2>
+      <div class="grid-3 rv-stagger" style="grid-template-columns:repeat(3,1fr);gap:1.2rem">
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem;cursor:pointer;transition:all 0.3s var(--ease)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
+          <div style="font-family:var(--M);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem">01</div>
+          <h3 style="font-family:var(--D);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:0.8rem">What is FPV?</h3>
+          <p class="body-sm">FPV stands for First Person View. The pilot wears goggles and flies the drone in a single unbroken take — through doors, down hallways, and around corners like you're walking the space yourself.</p>
+        </div>
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem;cursor:pointer;transition:all 0.3s var(--ease)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
+          <div style="font-family:var(--M);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem">02</div>
+          <h3 style="font-family:var(--D);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:0.8rem">What is <span style="color:#e53935">Part 107</span>?</h3>
+          <p class="body-sm">FAA <span style="color:#e53935">Part 107</span> is the required federal license to fly drones commercially. Every shoot is fully legal, insured, and authorized — including near airports and at events.</p>
+        </div>
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem;cursor:pointer;transition:all 0.3s var(--ease)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
+          <div style="font-family:var(--M);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem">03</div>
+          <h3 style="font-family:var(--D);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:0.8rem">How fast is delivery?</h3>
+          <p class="body-sm">Real estate shoots deliver in 24 hours. Cinematic edits in 3–5 days. Weddings and events in 5–7 days. Rush delivery available on request.</p>
+        </div>
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem;cursor:pointer;transition:all 0.3s var(--ease)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
+          <div style="font-family:var(--M);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem">04</div>
+          <h3 style="font-family:var(--D);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:0.8rem">Where are you located?</h3>
+          <p class="body-sm">Based in Charlotte, NC — serving the full area with no travel fee. Available nationwide across all 50 states for the right project.</p>
+        </div>
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem;cursor:pointer;transition:all 0.3s var(--ease)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
+          <div style="font-family:var(--M);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem">05</div>
+          <h3 style="font-family:var(--D);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:0.8rem">What services do you offer?</h3>
+          <p class="body-sm">Real estate tours, weddings, events, commercial venues, and production FPV. Every package includes 4K footage, color grading, and full usage rights.</p>
+        </div>
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem;cursor:pointer;transition:all 0.3s var(--ease)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
+          <div style="font-family:var(--M);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem">06</div>
+          <h3 style="font-family:var(--D);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:0.8rem">What is the pricing?</h3>
+          <p class="body-sm">Real estate from  weddings from  commercial from  production FPV from . Transparent pricing — no hidden fees, custom quotes upfront.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="rv" style="background:var(--b1);border:1px solid var(--line);border-radius:20px;padding:4rem 3rem;text-align:center">
+        <h2 class="h-lg" style="margin-bottom:1rem">Have a listing<br>worth <em>filming?</em></h2>
+        <p class="body-txt" style="max-width:480px;margin:0 auto 2rem">Send the address or scope, we'll get back within the hour during business hours.</p>
+        <button class="btn btn-gold" onclick="go('book')">Book a Shoot</button>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /home-content -->
+  </div><!-- /home-scroll-wrapper -->
+
+  <div id="ftr-home"></div>
+</div>
+
+<div class="pg" id="pg-portfolio">
+  <div class="page-banner">
+    <div class="wrap">
+      <div class="eyebrow">Our Work</div>
+      <h1>The <em>Portfolio.</em></h1>
+      <p>A collection of real client work — weddings, real estate flythroughs, moto and automotive tracking, and commercial production. No stock footage, no composites: every clip is from an actual shoot. Weddings make up the bulk of what we fly, so that's the deepest library — pick a category below to see the rest.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="rv-stagger" style="display:flex;flex-direction:column;gap:1.4rem">
+
+        <div class="pf-cat" onclick="openCategory('weddings')" style="position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--b2);border:1px solid var(--line);cursor:pointer">
+          <iframe src="https://iframe.videodelivery.net/f95bab7559567c9703e0a6ffab7be5cf?autoplay=true&muted=true&loop=true&controls=false&background=true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;min-width:177.78%;min-height:177.78%;border:none;pointer-events:none" allow="autoplay"></iframe>
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,13,18,0.85) 0%,rgba(10,13,18,0.05) 55%,rgba(10,13,18,0.15) 100%)"></div>
+          <div class="pf-cat-over" style="position:absolute;inset:0;background:rgba(10,13,18,0);transition:background 0.25s"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:2rem 2.5rem;display:flex;align-items:flex-end;justify-content:space-between">
+            <div>
+              <div style="font-family:var(--M);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.4rem">01</div>
+              <div style="font-family:var(--D);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:700;color:#fff">Weddings</div>
+            </div>
+            <div style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(245,243,238,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#f5f3ee" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="pf-cat" onclick="openCategory('moto')" style="position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--b2);border:1px solid var(--line);cursor:pointer">
+          <iframe src="https://iframe.videodelivery.net/799eeefcb246891cde55f81bde9edd21?autoplay=true&muted=true&loop=true&controls=false&background=true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;min-width:177.78%;min-height:177.78%;border:none;pointer-events:none" allow="autoplay"></iframe>
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,13,18,0.85) 0%,rgba(10,13,18,0.05) 55%,rgba(10,13,18,0.15) 100%)"></div>
+          <div class="pf-cat-over" style="position:absolute;inset:0;background:rgba(10,13,18,0);transition:background 0.25s"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:2rem 2.5rem;display:flex;align-items:flex-end;justify-content:space-between">
+            <div>
+              <div style="font-family:var(--M);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.4rem">02</div>
+              <div style="font-family:var(--D);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:700;color:#fff">Moto Auto</div>
+            </div>
+            <div style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(245,243,238,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#f5f3ee" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="pf-cat" onclick="openCategory('realestate')" style="position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--b2);border:1px solid var(--line);cursor:pointer">
+          <iframe src="https://iframe.videodelivery.net/7577e83ae3176e09db3e9754da65144a?autoplay=true&muted=true&loop=true&controls=false&background=true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;min-width:177.78%;min-height:177.78%;border:none;pointer-events:none" allow="autoplay"></iframe>
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,13,18,0.85) 0%,rgba(10,13,18,0.05) 55%,rgba(10,13,18,0.15) 100%)"></div>
+          <div class="pf-cat-over" style="position:absolute;inset:0;background:rgba(10,13,18,0);transition:background 0.25s"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:2rem 2.5rem;display:flex;align-items:flex-end;justify-content:space-between">
+            <div>
+              <div style="font-family:var(--M);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.4rem">03</div>
+              <div style="font-family:var(--D);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:700;color:#fff">Real Estate &amp; Fly Thru</div>
+            </div>
+            <div style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(245,243,238,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#f5f3ee" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="pf-cat" onclick="openCategory('commercial')" style="position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--b1);border:1px solid var(--line);cursor:pointer">
+          <iframe src="https://iframe.videodelivery.net/c9469edb28bf6f463bba232523496082?autoplay=true&muted=true&loop=true&controls=false&background=true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;min-width:177.78%;min-height:177.78%;border:none;pointer-events:none" allow="autoplay"></iframe>
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,13,18,0.85) 0%,rgba(10,13,18,0.05) 55%,rgba(10,13,18,0.15) 100%)"></div>
+          <div class="pf-cat-over" style="position:absolute;inset:0;background:rgba(10,13,18,0);transition:background 0.25s"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:2rem 2.5rem;display:flex;align-items:flex-end;justify-content:space-between">
+            <div>
+              <div style="font-family:var(--M);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.4rem">04</div>
+              <div style="font-family:var(--D);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:700;color:#fff">Production</div>
+            </div>
+            <div style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(245,243,238,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#f5f3ee" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="rv" style="background:var(--b1);border:1px solid var(--line);border-radius:20px;padding:4rem 3rem;text-align:center">
+        <h2 class="h-lg" style="margin-bottom:1rem">Like what you <em>see?</em></h2>
+        <p class="body-txt" style="max-width:480px;margin:0 auto 2rem">Let's get your shoot on the calendar.</p>
+        <button class="btn btn-gold" onclick="go('book')">Book a Shoot</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="ftr-portfolio"></div>
+</div>
+
+<div class="pg" id="pg-cat">
+  <div class="page-banner">
+    <div class="wrap">
+      <button onclick="go('portfolio')" style="display:inline-flex;align-items:center;gap:0.5rem;background:none;border:none;color:var(--grey2);font-family:var(--M);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;margin-bottom:1.4rem;padding:0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 18l-6-6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Portfolio
+      </button>
+      <div class="eyebrow" id="cat-eyebrow">Category</div>
+      <h1 id="cat-title"><em>Category.</em></h1>
+      <div id="cat-tabs" style="display:none;gap:0.6rem;margin-top:1.6rem"></div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="wrap">
+      <div id="cat-grid" class="grid-2 rv-stagger" style="gap:1.2rem"></div>
+      <div id="cat-empty" style="display:none;text-align:center;padding:4rem 1rem">
+        <span style="font-family:var(--M);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey2)" id="cat-empty-msg">Videos for this category are coming soon.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="rv" style="background:var(--b1);border:1px solid var(--line);border-radius:20px;padding:4rem 3rem;text-align:center">
+        <h2 class="h-lg" style="margin-bottom:1rem">Like what you <em>see?</em></h2>
+        <p class="body-txt" style="max-width:480px;margin:0 auto 2rem">Let's get your shoot on the calendar.</p>
+        <button class="btn btn-gold" onclick="go('book')">Book a Shoot</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="ftr-cat"></div>
+</div>
+
+<div id="vmodal" onclick="vmodalClose()" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.96);align-items:center;justify-content:center;cursor:pointer;animation:fadeIn 0.25s ease">
+  <button onclick="vmodalClose()" style="position:fixed;top:1.2rem;right:1.5rem;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;cursor:pointer;font-size:1.2rem;z-index:10000;display:flex;align-items:center;justify-content:center">&#10005;</button>
+  <div onclick="event.stopPropagation()" style="width:95vw;max-width:1400px;max-height:90vh;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,0.8)" id="vmodal-inner"></div>
+</div>
+
+<div class="pg" id="pg-services">
+
+  <div id="svc-hero" style="position:sticky;top:0;height:90vh;min-height:560px;overflow:hidden;z-index:1">
+    <iframe src="https://iframe.videodelivery.net/f8ff6cc6574816da1a95bd8cd9a8ca2e?autoplay=true&muted=true&loop=true&controls=false&background=true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;border:none;pointer-events:none;opacity:0.7" allow="autoplay"></iframe>
+    <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,13,18,1) 0%,rgba(10,13,18,0.3) 55%,rgba(10,13,18,0.05) 100%)"></div>
+    <div id="svc-hero-content" style="position:absolute;bottom:0;left:0;right:0;padding:0 2.5rem 4rem;max-width:1280px;margin:0 auto">
+      <div class="eyebrow">What We Offer</div>
+      <h1 style="font-family:var(--D);font-size:clamp(2.6rem,6vw,5.5rem);font-weight:700;line-height:0.98;letter-spacing:-0.01em;color:var(--white)">Services, <em style="color:var(--gold)">full kit.</em></h1>
+      <p style="font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey2);max-width:560px;line-height:1.8;margin-top:1rem">Transparent pricing across every vertical we shoot. Custom quotes available for commercial and production work.</p>
+    </div>
+  </div>
+
+  <div style="height:35vh"></div>
+
+  <div style="position:relative;z-index:2;background:var(--black)">
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head rv" style="margin-bottom:2.5rem">
+        <div>
+          <div class="eyebrow">Pricing</div>
+          <h2 class="h-lg">Services we <em>deliver.</em></h2>
+        </div>
+      </div>
+      <div class="rv" id="services-accordion">
+
+        <div class="svc-row" onclick="svcToggle(this)">
+          <div class="svc-top">
+            <div class="num-tag">01</div>
+            <div class="num-body"><h3>Real Estate &mdash; Drone Tour</h3><p class="svc-preview">Custom FPV flythroughs that showcase a property's flow.</p></div>
+            <div class="svc-caret">+</div>
+          </div>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p>A single immersive FPV flythrough shot in one continuous take — in through the front door, through every room, out to the backyard. This is the footage that stops buyers mid-scroll.</p>
+            <ul>
+              <li>Custom FPV flythrough (1 continuous take)</li>
+              <li>4K delivery, color graded</li>
+              <li>MLS-ready 16:9 and vertical 9:16 exports</li>
+              <li>Delivered within 24 hours</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="svc-row" onclick="svcToggle(this)">
+          <div class="svc-top">
+            <div class="num-tag">02</div>
+            <div class="num-body"><h3>Real Estate &mdash; Standard Kit</h3><p class="svc-preview">FPV tour, HDR photos, aerials, and a floor plan.</p></div>
+            <div class="svc-caret">+</div>
+          </div>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p>The most-booked package. Everything agents need to launch a listing — drone tour, photos, aerials, and a floor plan in one booking.</p>
+            <ul>
+              <li>FPV flythrough (drone tour)</li>
+              <li>HDR interior photography (25+ photos)</li>
+              <li>Exterior + aerial photography</li>
+              <li>2D floor plan</li>
+              <li>All files delivered within 24 hours</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="svc-row" onclick="svcToggle(this)">
+          <div class="svc-top">
+            <div class="num-tag">03</div>
+            <div class="num-body"><h3>Real Estate &mdash; Elite</h3><p class="svc-preview">Everything in Standard plus a cinematic highlight video.</p></div>
+            <div class="svc-caret">+</div>
+          </div>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p>For premium listings that deserve premium marketing. Adds a cinematic highlight reel and extended aerials on top of the full Standard Kit.</p>
+            <ul>
+              <li>Everything in Standard Kit</li>
+              <li>Cinematic highlight video (60–90 sec, music licensed)</li>
+              <li>Extended aerial footage (drone + FPV)</li>
+              <li>On-site creative direction</li>
+              <li>Social media cut included</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="svc-row" onclick="svcToggle(this)">
+          <div class="svc-top">
+            <div class="num-tag">04</div>
+            <div class="num-body"><h3>Weddings</h3><p class="svc-preview">Whisper-quiet aerials of your ceremony and reception.</p></div>
+            <div class="svc-caret">+</div>
+          </div>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p>Drone coverage that works alongside your main video team — not against them. We stay out of the way, catch the moments from above, and hand you a polished aerial cut.</p>
+            <ul>
+              <li>Ceremony aerial coverage</li>
+              <li>Reception + venue aerials</li>
+              <li>Edited highlight reel (aerial focused)</li>
+              <li>Raw footage included</li>
+              <li>Delivered within 5–7 business days</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="svc-row" onclick="svcToggle(this)">
+          <div class="svc-top">
+            <div class="num-tag">05</div>
+            <div class="num-body"><h3>Commercial &amp; Venues</h3><p class="svc-preview">Hotels, restaurants, office buildings, event spaces.</p></div>
+            <div class="svc-caret">+</div>
+          </div>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p>Showcase your space the way it deserves. FPV interior flythroughs plus exterior aerials — for hotel tours, restaurant promos, office walkthroughs, and venue marketing.</p>
+            <ul>
+              <li>FPV interior flythrough</li>
+              <li>Exterior aerial footage</li>
+              <li>Edited promo video (60–120 sec)</li>
+              <li>Photography add-on available</li>
+              <li>Custom scope available — get a quote</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="svc-row" onclick="svcToggle(this)">
+          <div class="svc-top">
+            <div class="num-tag">06</div>
+            <div class="num-body"><h3>Production FPV</h3><p class="svc-preview">Cinema-grade FPV for ads, music videos, and branded content.</p></div>
+            <div class="svc-caret">+</div>
+          </div>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p>Full production FPV work for commercial shoots, music videos, film sets, and branded campaigns. We bring the rigs, the pilot, and the creative eye — you bring the vision.</p>
+            <ul>
+              <li>Full-day rates available</li>
+              <li>Cinema-grade FPV and drone rigs</li>
+              <li>Works alongside your production team</li>
+              <li>Pre-production scouting included</li>
+              <li>Custom quote — contact us to scope</li>
+            </ul></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="eyebrow rv">Services</div>
+      <h2 class="h-lg rv" style="margin-bottom:2rem">What each service <em>includes.</em></h2>
+      <div class="grid-3 rv-stagger" style="gap:1.2rem">
+
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:18px;padding:2.2rem;display:flex;flex-direction:column;gap:1rem">
+          <div class="eyebrow" style="margin-bottom:0">Real Estate Flythrough</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;flex:1">
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>FPV flythrough (continuous take)</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>4K color-graded delivery</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>MLS + vertical social exports</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>24-hour delivery</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Full usage rights</li>
+          </ul>
+          <button class="btn btn-line" style="width:100%;justify-content:center" onclick="go('book')">Get a Quote</button>
+        </div>
+
+        <div style="background:var(--b1);border:2px solid var(--gold);border-radius:18px;padding:2.2rem;display:flex;flex-direction:column;gap:1rem;position:relative">
+          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#16110a;font-family:var(--M);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.9rem;border-radius:50px">Most Popular</div>
+          <div class="eyebrow" style="margin-bottom:0">Weddings</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;flex:1">
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Ceremony &amp; reception aerial coverage</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Edited aerial highlight reel</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Raw footage included</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Delivered within 5-7 days</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Price depends on location &amp; package</li>
+          </ul>
+          <button class="btn btn-line" style="width:100%;justify-content:center" onclick="go('book')">Get a Quote</button>
+        </div>
+
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:18px;padding:2.2rem;display:flex;flex-direction:column;gap:1rem">
+          <div class="eyebrow" style="margin-bottom:0">Commercial Flythrough</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;flex:1">
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>FPV interior flythrough</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>4K color-graded delivery</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Social &amp; web-ready exports</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>24-hour delivery</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Full usage rights</li>
+          </ul>
+          <button class="btn btn-line" style="width:100%;justify-content:center" onclick="go('book')">Get a Quote</button>
+        </div>
+
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:18px;padding:2.2rem;display:flex;flex-direction:column;gap:1rem">
+          <div class="eyebrow" style="margin-bottom:0">Commercial Package</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;flex:1">
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>FPV flythrough + exterior aerials</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Edited promo video (60-120s)</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>HDR photography add-on available</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Custom scope on request</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Full usage rights</li>
+          </ul>
+          <button class="btn btn-line" style="width:100%;justify-content:center" onclick="go('book')">Get a Quote</button>
+        </div>
+
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:18px;padding:2.2rem;display:flex;flex-direction:column;gap:1rem">
+          <div class="eyebrow" style="margin-bottom:0">Events</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;flex:1">
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Full event aerial coverage</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Edited highlight reel</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Raw footage included</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Delivered within 3-5 days</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Price varies by location &amp; travel</li>
+          </ul>
+          <button class="btn btn-line" style="width:100%;justify-content:center" onclick="go('book')">Get a Quote</button>
+        </div>
+
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:18px;padding:2.2rem;display:flex;flex-direction:column;gap:1rem">
+          <div class="eyebrow" style="margin-bottom:0">Custom</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;flex:1">
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Any service, any location</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Fully tailored to your project</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Hybrid packages available</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Commercial, brand, film &amp; more</li>
+            <li style="font-family:var(--S);font-size:0.83rem;color:var(--grey3);display:flex;gap:0.6rem"><span style="color:var(--gold)">&#8212;</span>Contact us for a free quote</li>
+          </ul>
+          <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="go('book')">Get a Quote</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="rv" style="background:var(--b1);border:1px solid var(--line);border-radius:20px;padding:4rem 3rem;text-align:center;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,145,58,0.06) 0%,transparent 70%);pointer-events:none"></div>
+        <div class="eyebrow" style="justify-content:center;margin-bottom:1.2rem">Actual Pricing</div>
+        <h2 class="h-lg" style="margin-bottom:1rem">Connect with Michael FPV<br>and the real <em>pricing reveals.</em></h2>
+        <p class="body-txt" style="max-width:520px;margin:0 auto 0.8rem">Every project is priced individually — scope, location, travel, and complexity all factor in. Reach out and we'll put together a number specific to your shoot within the hour.</p>
+        <p class="body-sm" style="max-width:440px;margin:0 auto 2.2rem">No commitment required. No vague estimates. Just a real price for your real project.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-gold" onclick="go('book')">Get My Price</button>
+          <a href="tel:+19803979127" class="btn btn-line">(980) 397-9127</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /services z-index wrapper -->
+
+  <div id="ftr-services"></div>
+</div>
+
+
+  <div id="ftr-services"></div>
+</div>
+
+<div class="pg" id="pg-bts">
+  <div class="page-banner">
+    <div class="wrap">
+      <div class="eyebrow">Behind the Scene</div>
+      <h1><em>BTS.</em></h1>
+      <p>Go behind the scenes with Michael FPV — the rigs, the process, and the footage before it gets edited.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="grid-2 rv" style="align-items:center;gap:3rem">
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center">
+          <div class="eyebrow" style="justify-content:center">How We Work</div>
+          <h2 class="h-md" style="margin-bottom:1.4rem">Behind <em>every shot.</em></h2>
+          <div style="display:flex;gap:0.8rem;width:100%;max-width:320px">
+            <div style="position:relative;aspect-ratio:9/16;flex:1;border-radius:14px;overflow:hidden">
+              <iframe src="https://iframe.videodelivery.net/bb0125f037c6c25e16526dad7c869fb4?autoplay=true&muted=true&loop=true&controls=false&background=true" style="position:absolute;inset:0;width:100%;height:100%;border:none;pointer-events:none" allow="autoplay"></iframe>
+            </div>
+            <div style="position:relative;aspect-ratio:9/16;flex:1;border-radius:14px;overflow:hidden">
+              <iframe src="https://iframe.videodelivery.net/580409878c4579b2c7d65eed3b8fc889?autoplay=true&muted=true&loop=true&controls=false&background=true" style="position:absolute;inset:0;width:100%;height:100%;border:none;pointer-events:none" allow="autoplay"></iframe>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center">
+          <p class="body-txt">Every project starts before we ever arrive on site. We review the location, check airspace, plan the flight path, and figure out which rig makes sense for the job. By the time we show up, we already know how we're going to shoot it.</p>
+          <p class="body-txt" style="margin-top:1rem">On shoot day we typically run two passes — one to understand the space, one to capture it. Interior flythroughs are flown in first-person through goggles, usually 2–3 practice runs before we lock the final take. Exterior aerials and photography happen alongside, timed around the light. Most shoots are wrapped in under two hours.</p>
+          <p class="body-txt" style="margin-top:1rem">After the shoot, footage goes straight into edit — color graded, cut to scope, and delivered the same day for most real estate projects. The goal every time is footage that actually gets used, not footage that sits in a folder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="eyebrow rv" style="margin-bottom:1rem">The Gear</div>
+      <h2 class="h-lg rv" style="margin-bottom:2.5rem">What we <em>fly.</em></h2>
+      <div class="grid-2 rv-stagger" style="gap:1.4rem">
+
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:16px;padding:2.2rem">
+          <div class="eyebrow" style="margin-bottom:0.8rem">Ducted Cinewhoop</div>
+          <h3 style="font-family:var(--D);font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:0.9rem">Built for tight spaces.</h3>
+          <p class="body-txt">Our ducted cinewhoop is a small, fully enclosed FPV drone purpose-built for indoor use. The propeller guards keep it safe around people, furniture, and narrow doorways — letting us fly through spaces that standard drones simply can't enter. It moves at a natural walking pace through rooms, hallways, and staircases in a single unbroken take. No cuts. No resets. Just one continuous move from the front door through every room.</p>
+          <p class="body-txt" style="margin-top:1rem">This is the drone responsible for the FPV flythroughs that make listings and venues look the way they actually feel to walk through.</p>
+        </div>
+
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:16px;padding:2.2rem">
+          <div class="eyebrow" style="margin-bottom:0.8rem">DJI Drone</div>
+          <h3 style="font-family:var(--D);font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:0.9rem">Built for altitude.</h3>
+          <p class="body-txt">Our standard DJI drone handles everything outdoors — wide aerial shots, sweeping orbits around buildings, high-resolution HDR photography, and smooth cinematic altitude footage. GPS-stabilized and whisper-quiet, it's the right tool for weddings, events, and any exterior property work where you need precision and silence.</p>
+          <p class="body-txt" style="margin-top:1rem">Every real estate package and wedding shoot that includes aerial photography runs on this rig. It captures angles no ground camera ever could.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="stat-strip rv">
+        <div class="stat-cell"><div class="stat-n"><span style="color:#e53935">Part 107</span></div><div class="stat-l">FAA Licensed</div></div>
+        <div class="stat-cell"><div class="stat-n">US Wide</div><div class="stat-l">All 50 States</div></div>
+        <div class="stat-cell"><div class="stat-n">Pro Gear</div><div class="stat-l">Professional</div></div>
+        <div class="stat-cell"><div class="stat-n">Insured</div><div class="stat-l">Every Shoot</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="eyebrow rv">Credentials</div>
+      <h2 class="h-lg rv" style="margin-bottom:2rem">Licensed. <em>Insured.</em></h2>
+      <div class="rv">
+        <div class="num-row" style="cursor:default">
+          <div class="num-tag">&mdash;</div>
+          <div class="num-body"><h3>FAA <span style="color:#e53935">Part 107</span> Certified</h3><p>Commercial drone pilot certification, current and in good standing.</p></div>
+          <div></div>
+        </div>
+        <div class="num-row" style="cursor:default">
+          <div class="num-tag">&mdash;</div>
+          <div class="num-body"><h3>Licensed Insured</h3><p>Full coverage on every shoot. COI available same-day on request.</p></div>
+          <div></div>
+        </div>
+        <div class="num-row" style="cursor:default">
+          <div class="num-tag">&mdash;</div>
+          <div class="num-body"><h3>Charlotte &amp; Beyond</h3><p>Based in Charlotte, traveling regularly across the Carolinas for the right project.</p></div>
+          <div></div>
+        </div>
+        <div class="num-row" style="cursor:default">
+          <div class="num-tag">&mdash;</div>
+          <div class="num-body"><h3>USA Wide Available</h3><p>Available for projects across all 50 states. Travel costs are quoted transparently upfront — no surprises.</p></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="rv" style="background:var(--b1);border:1px solid var(--line);border-radius:20px;padding:4rem 3rem;text-align:center">
+        <h2 class="h-lg" style="margin-bottom:1rem">Let's get your<br>shoot <em>scheduled.</em></h2>
+        <button class="btn btn-gold" onclick="go('book')" style="margin-top:1rem">Book a Shoot</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="ftr-bts"></div>
+</div>
+
+<div class="pg" id="pg-book">
+  <div class="page-banner">
+    <div class="wrap">
+      <div class="eyebrow">Get Started</div>
+      <h1>Book a <em>Shoot.</em></h1>
+      <p>Send us your project details and we'll get back with a custom price. No commitment, no vague estimates — just a real number for your real shoot.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="grid-2">
+        <div class="rv-l">
+          <div class="eyebrow">Direct Contact</div>
+          <h2 class="h-md" style="margin-bottom:1.4rem">Skip the form?</h2>
+          <p class="body-txt" style="margin-bottom:2rem">Text or email directly and we'll get back to you fast.</p>
+          <div style="display:flex;flex-direction:column;gap:1rem">
+            <a href="tel:+19803979127" style="font-family:var(--M);font-size:1.1rem;color:var(--white)">(980) 397-9127</a>
+            <a href="mailto:michaelfpv06@gmail.com" style="font-family:var(--M);font-size:0.95rem;color:var(--grey3)">michaelfpv06@gmail.com</a>
+          <a href="https://www.instagram.com/michael__fpv/" target="_blank" rel="noopener" style="font-family:var(--M);font-size:0.95rem;color:var(--gold);display:flex;align-items:center;gap:0.4rem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@michael__fpv</a>
+          </div>
+          <div class="eyebrow" style="margin-top:2.5rem">Service Area</div>
+          <p class="body-txt">Charlotte area standard. Raleigh, Asheville, and the Carolina coast &mdash; we travel regularly with quote.</p>
+        </div>
+        <div class="rv-r">
+          <div class="form-wrap">
+            <div class="fg"><label class="flbl">Name</label><input type="text" class="finp" id="f-name" name="name" placeholder="Your full name" required></div>
+            <div class="fg"><label class="flbl">Email</label><input type="email" class="finp" id="f-email" name="email" placeholder="you@example.com" required></div>
+            <div class="fg"><label class="flbl">Phone</label><input type="tel" class="finp" id="f-phone" name="phone" placeholder="(704) 555-0100"></div>
+            <div class="fg"><label class="flbl">Property / Event Address</label><input type="text" class="finp" id="f-address" name="address" placeholder="Address or venue name"></div>
+            <div class="fg"><label class="flbl">Service Needed</label>
+              <select class="finp" id="f-service" name="service">
+                <option>Real Estate &mdash; Drone Tour</option>
+                <option>Real Estate &mdash; Standard Kit</option>
+                <option>Real Estate &mdash; Elite</option>
+                <option>Wedding</option>
+                <option>Commercial / Venue</option>
+                <option>Production FPV</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="fg"><label class="flbl">Details</label><textarea class="finp" id="f-details" name="details" placeholder="Tell us about the shoot..."></textarea></div>
+            <button class="btn btn-gold" style="width:100%;justify-content:center;margin-top:0.5rem" onclick="bookSubmit()">Send Request</button>
+            <p id="bookSuccess" style="display:none;font-family:var(--M);font-size:0.75rem;color:var(--gold);text-align:center;margin-top:1rem">Request sent &mdash; we'll be in touch shortly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="ftr-book"></div>
+</div>
+
+<div class="pg" id="pg-terms">
+  <div class="page-banner">
+    <div class="wrap">
+      <div class="eyebrow">Last Updated June 2026</div>
+      <h1>Terms of <em>Service.</em></h1>
+    </div>
+  </div>
+  <section class="sec">
+    <div class="wrap" style="max-width:820px">
+      <div style="display:flex;flex-direction:column;gap:2.8rem">
+
+        <div>
+          <div class="eyebrow" style="margin-bottom:0.8rem">Agreement</div>
+          <h3 class="h-md" style="font-size:1.15rem;margin-bottom:0.8rem">Acceptance of Terms</h3>
+          <p class="body-txt">By booking a shoot, submitting payment, or paying a deposit, you agree to be bound by these Terms of Service in full. These terms apply to all projects including real estate, weddings, events, commercial productions, and any custom scope agreed upon between the client and Michael FPV.</p>
+        </div>
+
+        <div>
+          <div class="eyebrow" style="margin-bottom:0.8rem">Payment</div>
+          <h3 class="h-md" style="font-size:1.15rem;margin-bottom:0.8rem">Deposits &amp; Payment Structure</h3>
+          <p class="body-txt" style="margin-bottom:1rem">Certain projects require a non-refundable deposit to secure your shoot date and block time on our calendar. The deposit amount will be communicated at the time of booking and may range from 25% to 50% of the total project cost depending on scope and timeline.</p>
+          <p class="body-txt">The remaining balance is due upon delivery of final files, or as otherwise agreed in writing. Failure to complete payment does not entitle the client to retain any delivered assets.</p>
+        </div>
+
+        <div>
+          <div class="eyebrow" style="margin-bottom:0.8rem">Refunds</div>
+          <h3 class="h-md" style="font-size:1.15rem;margin-bottom:0.8rem">Non-Refundable Policy</h3>
+          <p class="body-txt" style="margin-bottom:1rem"><strong style="color:var(--white)">All payments made to Michael FPV are non-refundable.</strong> This includes deposits, partial payments, and full balances. Once payment is submitted, it cannot be reversed regardless of whether the shoot has taken place.</p>
+          <p class="body-txt">This policy exists because time is blocked, preparation is done, and in many cases equipment and travel are arranged well in advance of your scheduled shoot date.</p>
+        </div>
+
+        <div>
+          <div class="eyebrow" style="margin-bottom:0.8rem">Client Responsibility</div>
+          <h3 class="h-md" style="font-size:1.15rem;margin-bottom:0.8rem">No Refund for Client Errors or No-Shows</h3>
+          <p class="body-txt" style="margin-bottom:1rem">No refund, credit, or reshoot will be issued in the following situations:</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.7rem;padding-left:0">
+            <li style="font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey3);display:flex;gap:0.8rem;line-height:1.7"><span style="color:var(--gold);flex-shrink:0;margin-top:0.1rem">—</span>The client does not show up to the scheduled shoot</li>
+            <li style="font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey3);display:flex;gap:0.8rem;line-height:1.7"><span style="color:var(--gold);flex-shrink:0;margin-top:0.1rem">—</span>The client provides an incorrect address, wrong location, or incomplete access information</li>
+            <li style="font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey3);display:flex;gap:0.8rem;line-height:1.7"><span style="color:var(--gold);flex-shrink:0;margin-top:0.1rem">—</span>The client is not ready at the agreed shoot time and the session cannot be completed</li>
+            <li style="font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey3);display:flex;gap:0.8rem;line-height:1.7"><span style="color:var(--gold);flex-shrink:0;margin-top:0.1rem">—</span>The client cancels without adequate notice (less than 48 hours before the shoot)</li>
+            <li style="font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey3);display:flex;gap:0.8rem;line-height:1.7"><span style="color:var(--gold);flex-shrink:0;margin-top:0.1rem">—</span>The client changes the scope, location, or requirements after the shoot has been completed</li>
+            <li style="font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey3);display:flex;gap:0.8rem;line-height:1.7"><span style="color:var(--gold);flex-shrink:0;margin-top:0.1rem">—</span>The client is unsatisfied with the creative result but the agreed deliverables were provided</li>
+          </ul>
+          <p class="body-txt" style="margin-top:1rem">It is the client's full responsibility to provide accurate booking information, confirm the shoot address, and be present or ensure access is available at the agreed time.</p>
+        </div>
+
+        <div>
+          <div class="eyebrow" style="margin-bottom:0.8rem">Our Responsibility</div>
+          <h3 class="h-md" style="font-size:1.15rem;margin-bottom:0.8rem">When Michael FPV Is at Fault</h3>
+          <p class="body-txt" style="margin-bottom:1rem">If a project is not delivered due to an error, technical failure, or oversight on our part, Michael FPV will offer one of the following at our discretion:</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.7rem;padding-left:0">
+            <li style="font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey3);display:flex;gap:0.8rem;line-height:1.7"><span style="color:var(--gold);flex-shrink:0;margin-top:0.1rem">—</span>A reshoot at no additional cost to the client</li>
+            <li style="font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey3);display:flex;gap:0.8rem;line-height:1.7"><span style="color:var(--gold);flex-shrink:0;margin-top:0.1rem">—</span>Re-editing or adjusting delivered footage if the issue is in post-production</li>
+            <li style="font-family:var(--S);font-size:0.92rem;font-weight:300;color:var(--grey3);display:flex;gap:0.8rem;line-height:1.7"><span style="color:var(--gold);flex-shrink:0;margin-top:0.1rem">—</span>A partial credit toward a future booking</li>
+          </ul>
+          <p class="body-txt" style="margin-top:1rem"><strong style="color:var(--white)">No monetary refund will be issued under any circumstance.</strong> Our commitment is to make it right through the work itself — not through reimbursement.</p>
+        </div>
+
+        <div>
+          <div class="eyebrow" style="margin-bottom:0.8rem">Rescheduling</div>
+          <h3 class="h-md" style="font-size:1.15rem;margin-bottom:0.8rem">Date Changes</h3>
+          <p class="body-txt">Rescheduling requests must be made at least 48 hours before the original shoot date. One reschedule is permitted per booking at no charge, subject to availability. Additional reschedules may incur a rebooking fee. Rescheduling does not entitle the client to a refund of any deposit or payment already made.</p>
+        </div>
+
+        <div>
+          <div class="eyebrow" style="margin-bottom:0.8rem">Delivery</div>
+          <h3 class="h-md" style="font-size:1.15rem;margin-bottom:0.8rem">Delivery Timelines</h3>
+          <p class="body-txt">Standard delivery timelines are as follows: real estate and commercial shoots within 24–48 hours; events within 3–5 business days; weddings within 5–7 business days. Timelines are estimates and may vary based on project complexity. Rush delivery may be available at an additional charge.</p>
+        </div>
+
+        <div>
+          <div class="eyebrow" style="margin-bottom:0.8rem">Licensing</div>
+          <h3 class="h-md" style="font-size:1.15rem;margin-bottom:0.8rem">Usage Rights</h3>
+          <p class="body-txt">Upon receipt of full payment, the client receives a non-exclusive license to use all delivered footage and photos for marketing, MLS listings, social media, paid advertising, and general commercial use. Michael FPV retains the right to use project footage in portfolio, showreel, and promotional materials unless otherwise agreed in writing.</p>
+        </div>
+
+        <div>
+          <div class="eyebrow" style="margin-bottom:0.8rem">Compliance</div>
+          <h3 class="h-md" style="font-size:1.15rem;margin-bottom:0.8rem">FAA &amp; Airspace</h3>
+          <p class="body-txt">All drone operations are conducted by an FAA <span style="color:#e53935">Part 107</span> certified pilot and comply with applicable federal, state, and local regulations. The client is responsible for obtaining any required venue permits or property permissions prior to the shoot date. Michael FPV reserves the right to cancel or modify a shoot if airspace restrictions, weather conditions, or safety concerns prevent safe flight — in which case a reschedule will be offered.</p>
+        </div>
+
+        <div style="background:var(--b1);border:1px solid var(--line);border-radius:14px;padding:2rem">
+          <p class="body-sm" style="margin-bottom:0.5rem">Questions about these terms? Contact us directly before booking.</p>
+          <a href="tel:+19803979127" style="font-family:var(--M);font-size:0.85rem;color:var(--gold)">(980) 397-9127</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div id="ftr-terms"></div>
+</div>
+
+<script>
+
+// ── HERO SCROLL DISAPPEAR ──
+(function(){
+  window.addEventListener('scroll', function(){
+    var hero = document.getElementById('hero');
+    var content = document.getElementById('hero-content');
+    if(!hero) return;
+    var p = Math.min(Math.max(window.scrollY / (window.innerHeight * 0.12), 0), 1);
+    var e = 1 - Math.pow(1 - p, 3);
+    hero.style.opacity   = (1 - e).toFixed(3);
+    hero.style.transform = 'scale(' + (1 - e * 0.05).toFixed(4) + ') translateY(' + (-e * 50).toFixed(1) + 'px)';
+    if(content){
+      var ec = Math.min(p / 0.55, 1);
+      ec = 1 - Math.pow(1 - ec, 2);
+      content.style.opacity   = (1 - ec).toFixed(3);
+      content.style.transform = 'translateY(' + (-ec * 80).toFixed(1) + 'px)';
+    }
+  }, {passive: true});
+})();
+
+// ── SERVICES HERO SCROLL DISAPPEAR ──
+document.addEventListener('scroll', function(){
+  var hero = document.getElementById('svc-hero');
+  var content = document.getElementById('svc-hero-content');
+  if(!hero || !document.getElementById('pg-services').classList.contains('on')) return;
+  var p = Math.min(Math.max(window.scrollY / (window.innerHeight * 0.12), 0), 1);
+  var e = 1 - Math.pow(1 - p, 3);
+  hero.style.opacity = (1 - e).toFixed(3);
+  if(content){
+    var ec = Math.min(p / 0.3, 1);
+    ec = 1 - Math.pow(1 - ec, 2);
+    content.style.opacity = (1 - ec).toFixed(3);
+    content.style.transform = 'translateY(' + (-ec * 60).toFixed(1) + 'px)';
+  }
+}, {passive: true});
+
+// ── SERVICE ACCORDION ──
+function svcToggle(row){
+  const body = row.querySelector('.svc-body');
+  const isOpen = row.classList.contains('open');
+  // close all others
+  document.querySelectorAll('.svc-row.open').forEach(r=>{
+    r.classList.remove('open');
+    r.querySelector('.svc-body').style.maxHeight = null;
+  });
+  if(!isOpen){
+    row.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+
+// ── LOGO -> HOME (keyboard) ──
+document.addEventListener('keydown', function(e){
+  if(e.key !== 'Enter' && e.key !== ' ') return;
+  var el = document.activeElement;
+  if(el && el.classList && el.classList.contains('logo')){
+    e.preventDefault();
+    go('home');
+  }
+});
+
+function go(pg){
+  var _h = document.getElementById('hero');
+  var _hc = document.getElementById('hero-content');
+  if(pg === 'home'){
+    if(_h){ _h.style.opacity = ''; _h.style.transform = ''; }
+    if(_hc){ _hc.style.opacity = ''; _hc.style.transform = ''; }
+  }
+  const current = document.querySelector('.pg.on');
+  const target = document.getElementById('pg-'+pg);
+  if(!target) return;
+  if(current && current !== target){
+    current.classList.remove('show');
+    current.classList.add('leaving');
+    setTimeout(()=>{
+      current.classList.remove('on','leaving');
+      target.classList.add('on');
+      requestAnimationFrame(()=>requestAnimationFrame(()=>target.classList.add('show')));
+      window.scrollTo({top:0,behavior:'instant'});
+      setTimeout(initReveal,50);
+    },260);
+  } else {
+    target.classList.add('on');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>target.classList.add('show')));
+    window.scrollTo({top:0,behavior:'instant'});
+    setTimeout(initReveal,50);
+  }
+  document.querySelectorAll('.nav-a[data-pg]').forEach(a=>a.classList.toggle('on',a.dataset.pg===pg));
+  const sb=document.getElementById('side-book');
+  if(sb) sb.style.display = pg==='book' ? 'none' : 'flex';
+}
+
+function initReveal(){
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+  },{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.pg.on .rv,.pg.on .rv-l,.pg.on .rv-r,.pg.on .rv-s,.pg.on .rv-stagger').forEach(el=>{
+    el.classList.remove('in');
+    io.observe(el);
+  });
+}
+initReveal();
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', ()=>{
+  nav.classList.toggle('bg', scrollY > 60);
+}, {passive:true});
+
+function vmodalOpen(src){
+  var modal = document.getElementById('vmodal');
+  var inner = document.getElementById('vmodal-inner');
+  if(!modal||!src) return;
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  if(inner){
+    if(src.startsWith('cf:')){
+      var id = src.slice(3);
+      inner.innerHTML = '<iframe src="https://iframe.videodelivery.net/'+id+'?autoplay=true&muted=false&controls=true&loop=false" style="width:100%;height:100%;border:none" allow="autoplay;fullscreen" allowfullscreen></iframe>';
+    } else if(/^[a-f0-9]{32}$/.test(src)){
+      inner.innerHTML = '<iframe src="https://iframe.videodelivery.net/'+src+'?autoplay=true&muted=false&controls=true&loop=false" style="width:100%;height:100%;border:none" allow="autoplay;fullscreen" allowfullscreen></iframe>';
+    } else {
+      inner.innerHTML = '<video controls autoplay playsinline src="'+src+'" style="width:100%;height:100%;display:block"></video>';
+    }
+  }
+}
+function vmodalClose(){
+  var modal = document.getElementById('vmodal');
+  var inner = document.getElementById('vmodal-inner');
+  if(inner) inner.innerHTML = '';
+  if(modal) modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// ── PORTFOLIO CATEGORIES ──
+var categoryData = {
+  weddings: {
+    title: 'Weddings',
+    tabs: [
+      { key: 'main', label: 'Weddings', videos: [
+        { stream: 'f95bab7559567c9703e0a6ffab7be5cf', label: 'Ceremony & Reception' }
+      ]},
+      { key: 'bts', label: 'Wedding BTS', videos: [
+        { stream: '580409878c4579b2c7d65eed3b8fc889', label: 'Behind the Scenes' }
+      ]}
+    ]
+  },
+  moto: {
+    title: 'Moto Auto',
+    videos: [
+      { stream: 'fe4e9b86ce14a9c71427e4136c6bef31', label: 'FPV Chase' },
+      { stream: '799eeefcb246891cde55f81bde9edd21', label: 'FPV Tracking' }
+    ]
+  },
+  realestate: {
+    title: 'Real Estate & Fly Thru',
+    videos: [
+      { stream: '7577e83ae3176e09db3e9754da65144a', label: 'Fly Thru' }
+    ]
+  },
+  commercial: {
+    title: 'Production',
+    videos: [
+      { stream: 'c9469edb28bf6f463bba232523496082', label: 'Production' }
+    ]
+  }
+};
+
+function renderCatVideos(videos){
+  var grid = document.getElementById('cat-grid');
+  var empty = document.getElementById('cat-empty');
+  grid.innerHTML = '';
+
+  if(!videos.length){
+    grid.style.display = 'none';
+    empty.style.display = 'block';
+  } else {
+    grid.style.display = 'grid';
+    empty.style.display = 'none';
+    videos.forEach(function(v){
+      var card = document.createElement('div');
+      card.style.cssText = 'position:relative;aspect-ratio:'+(v.portrait?'9/16':'16/9')+';border-radius:16px;overflow:hidden;background:var(--b2);border:1px solid var(--line);cursor:pointer'+(v.portrait?';max-width:280px;margin:0 auto':'');
+      card.onclick = function(){ vmodalOpen(v.stream); };
+      var iframeStyle = v.portrait
+        ? 'position:absolute;inset:0;width:100%;height:100%;border:none;pointer-events:none'
+        : 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;min-width:177.78%;min-height:177.78%;border:none;pointer-events:none';
+      card.innerHTML =
+        '<iframe src="https://iframe.videodelivery.net/'+v.stream+'?autoplay=true&muted=true&loop=true&controls=false&background=true" style="'+iframeStyle+'" allow="autoplay"></iframe>';
+      grid.appendChild(card);
+    });
+  }
+}
+
+function openCategory(key){
+  var cat = categoryData[key];
+  if(!cat) return;
+  document.getElementById('cat-eyebrow').textContent = 'Portfolio';
+  document.getElementById('cat-title').innerHTML = cat.title + ' <em>Reel.</em>';
+
+  var tabsEl = document.getElementById('cat-tabs');
+  tabsEl.innerHTML = '';
+
+  if(cat.tabs){
+    tabsEl.style.display = 'flex';
+    cat.tabs.forEach(function(tab, i){
+      var btn = document.createElement('button');
+      btn.className = 'cat-tab' + (i===0 ? ' on' : '');
+      btn.textContent = tab.label;
+      btn.onclick = function(){
+        tabsEl.querySelectorAll('.cat-tab').forEach(function(b){ b.classList.remove('on'); });
+        btn.classList.add('on');
+        renderCatVideos(tab.videos);
+      };
+      tabsEl.appendChild(btn);
+    });
+    renderCatVideos(cat.tabs[0].videos);
+  } else {
+    tabsEl.style.display = 'none';
+    renderCatVideos(cat.videos);
+  }
+
+  go('cat');
+  document.querySelectorAll('.nav-a[data-pg]').forEach(function(a){
+    a.classList.toggle('on', a.dataset.pg === 'portfolio');
+  });
+}
+
+function bookSubmit(){
+  var name    = document.getElementById('f-name').value.trim();
+  var email   = document.getElementById('f-email').value.trim();
+  var phone   = document.getElementById('f-phone').value.trim();
+  var address = document.getElementById('f-address').value.trim();
+  var service = document.getElementById('f-service').value;
+  var details = document.getElementById('f-details').value.trim();
+  var btn     = document.querySelector('#pg-book .btn-gold');
+
+  if(!name || !email){ alert('Please enter your name and email.'); return; }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  fetch('https://formspree.io/f/xdkoanab', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ name, email, phone, address, service, details })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    if(data.ok || data.next){
+      document.getElementById('bookSuccess').style.display = 'block';
+      document.getElementById('bookSuccess').textContent = "✓ Request sent — we'll be in touch shortly.";
+      btn.textContent = 'Sent!';
+      // clear fields
+      ['f-name','f-email','f-phone','f-address','f-details'].forEach(function(id){
+        var el = document.getElementById(id); if(el) el.value = '';
+      });
+    } else {
+      btn.textContent = 'Send Request';
+      btn.disabled = false;
+      alert('Something went wrong. Please email us directly at michaelfpv06@gmail.com');
+    }
+  })
+  .catch(function(){
+    btn.textContent = 'Send Request';
+    btn.disabled = false;
+    alert('Something went wrong. Please email us directly at michaelfpv06@gmail.com');
+  });
+}
+
+window.addEventListener('load', ()=>{
+  setTimeout(()=>{
+    const pl = document.getElementById('page-loader');
+    if(pl) pl.classList.add('hide');
+  }, 250);
+});
+setTimeout(()=>{
+  const pl = document.getElementById('page-loader');
+  if(pl) pl.classList.add('hide');
+}, 2500);
+
+const footerHTML = `
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="logo" onclick="go('home')" role="link" tabindex="0" aria-label="Go to home page">
+          <span class="logo-name">MICHAEL<span>FPV</span></span>
+        </div>
+        <p class="foot-desc" style="margin-top:0.3rem;font-family:var(--M);font-size:0.72rem;color:var(--grey2)">Michael Yushchenko</p>
+        <p class="foot-desc">Charlotte's FPV drone media team. Real estate, weddings, events, and commercial production.</p>
+      </div>
+      <div>
+        <div class="foot-h">Services</div>
+        <div class="foot-links">
+          <a onclick="go('services')">Real Estate</a>
+          <a onclick="go('services')">Weddings</a>
+          <a onclick="go('services')">Commercial</a>
+          <a onclick="go('services')">Production FPV</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Studio</div>
+        <div class="foot-links">
+          <a onclick="go('bts')">BTS</a>
+          <a onclick="go('portfolio')">Portfolio</a>
+          <a onclick="go('services')">Pricing</a>
+          <a onclick="go('book')">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Contact</div>
+        <div class="foot-links">
+          <a href="tel:+19803979127">(980) 397-9127</a>
+          <a href="mailto:michaelfpv06@gmail.com">michaelfpv06@gmail.com</a>
+          <a href="https://www.instagram.com/michael__fpv/" target="_blank" rel="noopener" style="color:var(--gold)">@michael__fpv</a>
+        </div>
+        <p class="foot-desc" style="margin-top:1.2rem">FAA <span style="color:#e53935">Part 107</span> Certified &middot; Licensed Insured</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">&copy; 2026 Michael FPV</span>
+      <div class="foot-legal">
+        <a onclick="go('terms')">Terms of Service</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>`;
+['home','portfolio','cat','services','bts','book','terms'].forEach(p=>{
+  const slot = document.getElementById('ftr-'+p);
+  if(slot) slot.outerHTML = footerHTML;
+});
+</script>
+</body>
+</html>
